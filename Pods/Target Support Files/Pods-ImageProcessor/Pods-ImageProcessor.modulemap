@@ -1,0 +1,6 @@
+framework module Pods_ImageProcessor {
+  umbrella header "Pods-ImageProcessor-umbrella.h"
+
+  export *
+  module * { export * }
+}

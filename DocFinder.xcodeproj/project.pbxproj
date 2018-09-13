@@ -38,6 +38,9 @@
 		11F48832214AE13C00DB1522 /* FinderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F48831214AE13C00DB1522 /* FinderSession.swift */; };
 		11F48833214AE66A00DB1522 /* ImageProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; };
 		11F48834214AE66A00DB1522 /* ImageProcessor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		11F48839214AE71900DB1522 /* FinderResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F48838214AE71900DB1522 /* FinderResultCell.swift */; };
+		11F4883B214AE7F500DB1522 /* PreviewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4883A214AE7F500DB1522 /* PreviewCache.swift */; };
+		11F4883D214AEA0F00DB1522 /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4883C214AEA0F00DB1522 /* FinderViewController.swift */; };
 		72AA267F9B13D2EFED8C8414 /* Pods_DocFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAF377933874EFFB3469A0E /* Pods_DocFinderUITests.framework */; };
 		B3E340F1B36C1C6F4E74A698 /* Pods_DocFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C4F65F56113A14129FCBAA /* Pods_DocFinderTests.framework */; };
 		D8C56962668B8377176C3962 /* Pods_DocFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC51E725B90F61CA3AB0F5B /* Pods_DocFinder.framework */; };
@@ -136,6 +139,9 @@
 		11F0AB3D2149A3FD0050A4EA /* OperationStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStep2.swift; sourceTree = "<group>"; };
 		11F4882F214AD45400DB1522 /* ProcessingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingOperation.swift; sourceTree = "<group>"; };
 		11F48831214AE13C00DB1522 /* FinderSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSession.swift; sourceTree = "<group>"; };
+		11F48838214AE71900DB1522 /* FinderResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderResultCell.swift; sourceTree = "<group>"; };
+		11F4883A214AE7F500DB1522 /* PreviewCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCache.swift; sourceTree = "<group>"; };
+		11F4883C214AEA0F00DB1522 /* FinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
 		31DABC38B0FF47D9DB2603D4 /* Pods-ImageProcessor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageProcessor.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageProcessor/Pods-ImageProcessor.release.xcconfig"; sourceTree = "<group>"; };
 		58C4F65F56113A14129FCBAA /* Pods_DocFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1AE6E0E15D959E381BFE97 /* Pods-DocFinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocFinderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocFinderUITests/Pods-DocFinderUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +231,9 @@
 			children = (
 				110A069320AF1489001917E3 /* AppDelegate.swift */,
 				110A069520AF1489001917E3 /* ViewController.swift */,
+				11F4883C214AEA0F00DB1522 /* FinderViewController.swift */,
+				11F48838214AE71900DB1522 /* FinderResultCell.swift */,
+				11F4883A214AE7F500DB1522 /* PreviewCache.swift */,
 				11F4882F214AD45400DB1522 /* ProcessingOperation.swift */,
 				11F48831214AE13C00DB1522 /* FinderSession.swift */,
 				118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */,
@@ -633,7 +642,10 @@
 				110A069620AF1489001917E3 /* ViewController.swift in Sources */,
 				118ADF9D20C7BA2200A540C9 /* ImageClassifier.mlmodel in Sources */,
 				11F48832214AE13C00DB1522 /* FinderSession.swift in Sources */,
+				11F4883B214AE7F500DB1522 /* PreviewCache.swift in Sources */,
+				11F4883D214AEA0F00DB1522 /* FinderViewController.swift in Sources */,
 				11F48830214AD45400DB1522 /* ProcessingOperation.swift in Sources */,
+				11F48839214AE71900DB1522 /* FinderResultCell.swift in Sources */,
 				110A069420AF1489001917E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

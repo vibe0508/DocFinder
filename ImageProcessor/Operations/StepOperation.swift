@@ -8,9 +8,10 @@
 
 import Foundation
 
-class StepOperation<Input, Output>: Operation {
+public class StepOperation<Input, Output>: Operation {
 
-    typealias OutputHandler = (Output) -> ()
+    public typealias OutputHandler = (Output) -> ()
+    public typealias ErrorHandler = (Error?) -> ()
 
     private var _isFinished = false {
         didSet {
@@ -30,14 +31,15 @@ class StepOperation<Input, Output>: Operation {
     }
 
     private let outputHandler: OutputHandler
+    private let errorHandler: ErrorHandler
     private let outputHandlingQueue: DispatchQueue
 
     var input: Input
 
-    override var isAsynchronous: Bool {
+    override public  var isAsynchronous: Bool {
         return true
     }
-    override var isFinished: Bool {
+    override public  var isFinished: Bool {
         set {
             _isFinished = newValue
         }
@@ -45,7 +47,7 @@ class StepOperation<Input, Output>: Operation {
             return _isFinished
         }
     }
-    override var isExecuting: Bool {
+    override public  var isExecuting: Bool {
         set {
             _isExecuting = newValue
         }
@@ -54,15 +56,25 @@ class StepOperation<Input, Output>: Operation {
         }
     }
 
-    required init(input: Input, outputQueue: DispatchQueue, outputHandler: @escaping OutputHandler) {
+    required init(input: Input, outputQueue: DispatchQueue,
+                  outputHandler: @escaping OutputHandler, errorHandler: @escaping ErrorHandler) {
         self.input = input
         self.outputHandlingQueue = outputQueue
         self.outputHandler = outputHandler
+        self.errorHandler = errorHandler
     }
 
-    func finish(with result: Output) {
+    public func finish(with result: Output) {
         outputHandlingQueue.sync {
             outputHandler(result)
+        }
+        isExecuting = false
+        isFinished = true
+    }
+
+    public func fail(with error: Error?) {
+        outputHandlingQueue.sync {
+            errorHandler(error)
         }
         isExecuting = false
         isFinished = true

@@ -8,14 +8,18 @@
 
 import Photos
 
-protocol AssetsRetrieverProtocol {
+public protocol AssetsRetrieverProtocol {
     func retrieveAssetsList(success: @escaping ([PHAsset]) -> (), failure: @escaping (Error) -> ())
 }
 
-class AssetsRetriever: AssetsRetrieverProtocol {
-    func retrieveAssetsList(success: @escaping ([PHAsset]) -> (), failure: @escaping (Error) -> ()) {
+public class AssetsRetriever: AssetsRetrieverProtocol {
+
+    public init() {
+    }
+
+    public func retrieveAssetsList(success: @escaping ([PHAsset]) -> (), failure: @escaping (Error) -> ()) {
         requestPermissions(success: {
-            self.retrieveAssetsList(success: success, failure: failure)
+            self.retrieveAssetsListWhenAuthorized(success: success, failure: failure)
         }, failure: failure)
     }
     

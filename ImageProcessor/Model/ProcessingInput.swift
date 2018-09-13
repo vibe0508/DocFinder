@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Vision
 
 struct ProcessingInput {
     let imageData: Data
-    let modelName: String
+    let model: MLModel
 }

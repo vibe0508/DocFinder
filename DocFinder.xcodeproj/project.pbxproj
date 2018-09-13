@@ -25,6 +25,7 @@
 		118ADF9520C70EAD00A540C9 /* MappingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ADF9420C70EAD00A540C9 /* MappingStep.swift */; };
 		118ADF9920C7A6E900A540C9 /* FilteringStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ADF9820C7A6E900A540C9 /* FilteringStep.swift */; };
 		118ADF9B20C7AE0200A540C9 /* ProcessingOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ADF9A20C7AE0200A540C9 /* ProcessingOutput.swift */; };
+		118ADF9D20C7BA2200A540C9 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */; };
 		11B76F7E20AF1D9900A83E93 /* ImageProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; };
 		11B76F8520AF1D9900A83E93 /* ImageProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F8420AF1D9900A83E93 /* ImageProcessorTests.swift */; };
 		11B76F8720AF1D9900A83E93 /* ImageProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 11B76F7720AF1D9900A83E93 /* ImageProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +35,7 @@
 		11B76F9B20AF4E8B00A83E93 /* FinderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F9A20AF4E8B00A83E93 /* FinderSession.swift */; };
 		11B76F9D20AF4ECE00A83E93 /* SearchResultPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F9C20AF4ECE00A83E93 /* SearchResultPiece.swift */; };
 		11B76FA220AF51EB00A83E93 /* StepOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76FA120AF51EB00A83E93 /* StepOperation.swift */; };
+		11F0AB3E2149A3FD0050A4EA /* OperationStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F0AB3D2149A3FD0050A4EA /* OperationStep2.swift */; };
 		72AA267F9B13D2EFED8C8414 /* Pods_DocFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAF377933874EFFB3469A0E /* Pods_DocFinderUITests.framework */; };
 		B3E340F1B36C1C6F4E74A698 /* Pods_DocFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C4F65F56113A14129FCBAA /* Pods_DocFinderTests.framework */; };
 		D8C56962668B8377176C3962 /* Pods_DocFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC51E725B90F61CA3AB0F5B /* Pods_DocFinder.framework */; };
@@ -118,6 +120,7 @@
 		118ADF9420C70EAD00A540C9 /* MappingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingStep.swift; sourceTree = "<group>"; };
 		118ADF9820C7A6E900A540C9 /* FilteringStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringStep.swift; sourceTree = "<group>"; };
 		118ADF9A20C7AE0200A540C9 /* ProcessingOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingOutput.swift; sourceTree = "<group>"; };
+		118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageProcessor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B76F7720AF1D9900A83E93 /* ImageProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageProcessor.h; sourceTree = "<group>"; };
 		11B76F7820AF1D9900A83E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		11B76F9A20AF4E8B00A83E93 /* FinderSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSession.swift; sourceTree = "<group>"; };
 		11B76F9C20AF4ECE00A83E93 /* SearchResultPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPiece.swift; sourceTree = "<group>"; };
 		11B76FA120AF51EB00A83E93 /* StepOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOperation.swift; sourceTree = "<group>"; };
+		11F0AB3D2149A3FD0050A4EA /* OperationStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStep2.swift; sourceTree = "<group>"; };
 		31DABC38B0FF47D9DB2603D4 /* Pods-ImageProcessor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageProcessor.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageProcessor/Pods-ImageProcessor.release.xcconfig"; sourceTree = "<group>"; };
 		58C4F65F56113A14129FCBAA /* Pods_DocFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1AE6E0E15D959E381BFE97 /* Pods-DocFinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocFinderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocFinderUITests/Pods-DocFinderUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 			children = (
 				110A069320AF1489001917E3 /* AppDelegate.swift */,
 				110A069520AF1489001917E3 /* ViewController.swift */,
+				118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */,
 				110A069720AF1489001917E3 /* Main.storyboard */,
 				110A069A20AF148B001917E3 /* Assets.xcassets */,
 				110A069C20AF148B001917E3 /* LaunchScreen.storyboard */,
@@ -272,6 +277,7 @@
 				110A3C4A20B1DFC800634904 /* DataProvider.swift */,
 				110A3C4620B184DF00634904 /* FlowStep.swift */,
 				118ADF9220C70B9D00A540C9 /* OperationStep.swift */,
+				11F0AB3D2149A3FD0050A4EA /* OperationStep2.swift */,
 				118ADF9420C70EAD00A540C9 /* MappingStep.swift */,
 				118ADF9820C7A6E900A540C9 /* FilteringStep.swift */,
 				110A3C4820B1B71200634904 /* ArrayDataProvider.swift */,
@@ -619,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				110A069620AF1489001917E3 /* ViewController.swift in Sources */,
+				118ADF9D20C7BA2200A540C9 /* ImageClassifier.mlmodel in Sources */,
 				110A069420AF1489001917E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +664,7 @@
 				11B76F9D20AF4ECE00A83E93 /* SearchResultPiece.swift in Sources */,
 				110A3C4520B1830A00634904 /* ProcessingInput.swift in Sources */,
 				11B76FA220AF51EB00A83E93 /* StepOperation.swift in Sources */,
+				11F0AB3E2149A3FD0050A4EA /* OperationStep2.swift in Sources */,
 				110A3C3F20B1785100634904 /* LoadOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -842,6 +850,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NRJ5W5TPS;
 				INFOPLIST_FILE = DocFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -862,6 +871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NRJ5W5TPS;
 				INFOPLIST_FILE = DocFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -974,6 +984,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImageProcessor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1005,6 +1016,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImageProcessor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

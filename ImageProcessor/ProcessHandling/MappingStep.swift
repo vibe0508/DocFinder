@@ -49,14 +49,22 @@ class MappingStep<In, Out>: FlowStep {
                 self?.queue.async { self?.stop() }
                 return
             }
-            self?.queue.async { self?.convert(input) }
+            self?.queue.async {
+                self?.convert(input)
+                if self?.isStopped == false {
+                    self?.pickData(from: dataProvider)
+                }
+            }
         }
     }
 
     private func convert(_ input: Input) {
         let output = converter(input)
 
-        if let callback = queuedCallbacks.popLast() {
+        resultConsumer?(output)
+        if let resultConsumer = resultConsumer {
+            resultConsumer(output)
+        } else if let callback = queuedCallbacks.popLast() {
             callback(output)
         } else {
             buffer.append(output)

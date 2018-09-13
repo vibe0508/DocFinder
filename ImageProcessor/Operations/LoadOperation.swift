@@ -15,8 +15,16 @@ class LoadOperation: StepOperation<PHAsset, Data> {
 
     override func start() {
         isExecuting = true
-        imageManager.requestImageData(for: input, options: PHImageRequestOptions()) { [weak self] (data, _, _, _) in
-            self?.finish(with: data!)
+        let options = PHImageRequestOptions()
+        options.isNetworkAccessAllowed = false
+        options.isSynchronous = false
+        options.deliveryMode = .fastFormat
+        imageManager.requestImageData(for: input, options: options) { [weak self] (data, _, _, _) in
+            if let data = data {
+                self?.finish(with: data)
+            } else {
+                self?.fail(with: nil)
+            }
         }
     }
 

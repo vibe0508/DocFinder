@@ -27,6 +27,7 @@ class OperationStep<In, Out, Operation: StepOperation<In, Out>>: FlowStep {
     private var operationsCount = 0
     private var enquedGetters: [ResultGetter] = []
     private var isFinished = false
+    private var dataProviderIsEmpty = false
 
     init() {
         operationQueue.underlyingQueue = .global(qos: .background)
@@ -34,7 +35,7 @@ class OperationStep<In, Out, Operation: StepOperation<In, Out>>: FlowStep {
     }
 
     func start() {
-        iterateRequestMore()
+        requestMoreInput()
     }
 
     func then<NextStep: FlowStep>(_ nextStep: NextStep) -> NextStep where Out == NextStep.Input {
@@ -69,6 +70,11 @@ class OperationStep<In, Out, Operation: StepOperation<In, Out>>: FlowStep {
     }
 
     private func iterateRequestMore() {
+
+        guard !dispatchQueue.sync(execute: { dataProviderIsEmpty }) else {
+            return
+        }
+
         let (bufferLength, operationsCount) = dispatchQueue.sync { (buffer.count, self.operationsCount) }
 
         guard bufferLength + operationsCount < 5 else {
@@ -82,25 +88,26 @@ class OperationStep<In, Out, Operation: StepOperation<In, Out>>: FlowStep {
                 if let input = input {
                     self.addOperation(with: input)
                 } else {
-                    self.finish()
+                    self.dataProviderIsEmpty = true
                 }
             }
             group.leave()
         }
 
         group.wait()
-        iterateRequestMore()
+
+        if dispatchQueue.sync(execute: { !isFinished }) {
+            fillingQueue.async(execute: iterateRequestMore)
+        }
     }
 
     private func addOperation(with input: Input) {
         operationsCount += 1
-        let operation = Operation(input: input, outputQueue: dispatchQueue) { [unowned self] (output) in
-            self.buffer.append(output)
-            self.resultConsumer?(output)
-            self.operationsCount -= 1
-            self.fullfillEnquedGetters()
-            self.requestMoreInput()
-        }
+        let operation = Operation(input: input, outputQueue: dispatchQueue, outputHandler: { [weak self] (output) in
+            self?.handleOperation(output)
+        }, errorHandler: { [weak self] error in
+            self?.handleOperation(error)
+        })
         operationQueue.addOperation(operation)
     }
 
@@ -109,6 +116,34 @@ class OperationStep<In, Out, Operation: StepOperation<In, Out>>: FlowStep {
             getter(outputItem)
             _ = enquedGetters.popLast()
             _ = buffer.popLast()
+        }
+    }
+
+    private func handleOperation(_ result: Output) {
+        operationsCount -= 1
+
+        if let resultConsumer = resultConsumer {
+            resultConsumer(result)
+        } else {
+            buffer.append(result)
+            fullfillEnquedGetters()
+        }
+
+        if !dataProviderIsEmpty {
+            requestMoreInput()
+        } else if operationsCount <= 0 {
+            finish()
+        }
+    }
+
+    private func handleOperation(_ error: Error?) {
+        operationsCount -= 1
+        fullfillEnquedGetters()
+
+        if !dataProviderIsEmpty {
+            requestMoreInput()
+        } else if operationsCount <= 0 {
+            finish()
         }
     }
 

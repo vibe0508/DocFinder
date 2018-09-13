@@ -49,7 +49,12 @@ class FilteringStep<T>: FlowStep {
                 self?.queue.async { self?.stop() }
                 return
             }
-            self?.queue.async { self?.process(input) }
+            self?.queue.async {
+                self?.process(input)
+                if self?.isStopped == false {
+                    self?.pickData(from: dataProvider)
+                }
+            }
         }
     }
 
@@ -58,7 +63,10 @@ class FilteringStep<T>: FlowStep {
             return
         }
 
-        if let callback = queuedCallbacks.popLast() {
+        resultConsumer?(input)
+        if let resultConsumer = resultConsumer {
+            resultConsumer(input)
+        } else if let callback = queuedCallbacks.popLast() {
             callback(input)
         } else {
             buffer.append(input)

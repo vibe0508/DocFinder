@@ -29,13 +29,15 @@
 		11B76F7E20AF1D9900A83E93 /* ImageProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; };
 		11B76F8520AF1D9900A83E93 /* ImageProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F8420AF1D9900A83E93 /* ImageProcessorTests.swift */; };
 		11B76F8720AF1D9900A83E93 /* ImageProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 11B76F7720AF1D9900A83E93 /* ImageProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11B76F8A20AF1D9900A83E93 /* ImageProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; };
-		11B76F8B20AF1D9900A83E93 /* ImageProcessor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11B76F9620AF1E6600A83E93 /* AssetsRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F9520AF1E6600A83E93 /* AssetsRetriever.swift */; };
 		11B76F9B20AF4E8B00A83E93 /* FinderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F9A20AF4E8B00A83E93 /* FinderSession.swift */; };
 		11B76F9D20AF4ECE00A83E93 /* SearchResultPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F9C20AF4ECE00A83E93 /* SearchResultPiece.swift */; };
 		11B76FA220AF51EB00A83E93 /* StepOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76FA120AF51EB00A83E93 /* StepOperation.swift */; };
 		11F0AB3E2149A3FD0050A4EA /* OperationStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F0AB3D2149A3FD0050A4EA /* OperationStep2.swift */; };
+		11F48830214AD45400DB1522 /* ProcessingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4882F214AD45400DB1522 /* ProcessingOperation.swift */; };
+		11F48832214AE13C00DB1522 /* FinderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F48831214AE13C00DB1522 /* FinderSession.swift */; };
+		11F48833214AE66A00DB1522 /* ImageProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; };
+		11F48834214AE66A00DB1522 /* ImageProcessor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72AA267F9B13D2EFED8C8414 /* Pods_DocFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAF377933874EFFB3469A0E /* Pods_DocFinderUITests.framework */; };
 		B3E340F1B36C1C6F4E74A698 /* Pods_DocFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C4F65F56113A14129FCBAA /* Pods_DocFinderTests.framework */; };
 		D8C56962668B8377176C3962 /* Pods_DocFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC51E725B90F61CA3AB0F5B /* Pods_DocFinder.framework */; };
@@ -71,7 +73,7 @@
 			remoteGlobalIDString = 110A068F20AF1489001917E3;
 			remoteInfo = DocFinder;
 		};
-		11B76F8820AF1D9900A83E93 /* PBXContainerItemProxy */ = {
+		11F48835214AE66A00DB1522 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 110A068820AF1489001917E3 /* Project object */;
 			proxyType = 1;
@@ -81,13 +83,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		11B76F9120AF1D9900A83E93 /* Embed Frameworks */ = {
+		11F48837214AE66A00DB1522 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				11B76F8B20AF1D9900A83E93 /* ImageProcessor.framework in Embed Frameworks */,
+				11F48834214AE66A00DB1522 /* ImageProcessor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +134,8 @@
 		11B76F9C20AF4ECE00A83E93 /* SearchResultPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPiece.swift; sourceTree = "<group>"; };
 		11B76FA120AF51EB00A83E93 /* StepOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOperation.swift; sourceTree = "<group>"; };
 		11F0AB3D2149A3FD0050A4EA /* OperationStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStep2.swift; sourceTree = "<group>"; };
+		11F4882F214AD45400DB1522 /* ProcessingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingOperation.swift; sourceTree = "<group>"; };
+		11F48831214AE13C00DB1522 /* FinderSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSession.swift; sourceTree = "<group>"; };
 		31DABC38B0FF47D9DB2603D4 /* Pods-ImageProcessor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageProcessor.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageProcessor/Pods-ImageProcessor.release.xcconfig"; sourceTree = "<group>"; };
 		58C4F65F56113A14129FCBAA /* Pods_DocFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1AE6E0E15D959E381BFE97 /* Pods-DocFinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocFinderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocFinderUITests/Pods-DocFinderUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C56962668B8377176C3962 /* Pods_DocFinder.framework in Frameworks */,
-				11B76F8A20AF1D9900A83E93 /* ImageProcessor.framework in Frameworks */,
+				11F48833214AE66A00DB1522 /* ImageProcessor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +225,8 @@
 			children = (
 				110A069320AF1489001917E3 /* AppDelegate.swift */,
 				110A069520AF1489001917E3 /* ViewController.swift */,
+				11F4882F214AD45400DB1522 /* ProcessingOperation.swift */,
+				11F48831214AE13C00DB1522 /* FinderSession.swift */,
 				118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */,
 				110A069720AF1489001917E3 /* Main.storyboard */,
 				110A069A20AF148B001917E3 /* Assets.xcassets */,
@@ -362,12 +368,12 @@
 				110A068C20AF1489001917E3 /* Sources */,
 				110A068D20AF1489001917E3 /* Frameworks */,
 				110A068E20AF1489001917E3 /* Resources */,
-				11B76F9120AF1D9900A83E93 /* Embed Frameworks */,
+				11F48837214AE66A00DB1522 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				11B76F8920AF1D9900A83E93 /* PBXTargetDependency */,
+				11F48836214AE66A00DB1522 /* PBXTargetDependency */,
 			);
 			name = DocFinder;
 			productName = DocFinder;
@@ -626,6 +632,8 @@
 			files = (
 				110A069620AF1489001917E3 /* ViewController.swift in Sources */,
 				118ADF9D20C7BA2200A540C9 /* ImageClassifier.mlmodel in Sources */,
+				11F48832214AE13C00DB1522 /* FinderSession.swift in Sources */,
+				11F48830214AD45400DB1522 /* ProcessingOperation.swift in Sources */,
 				110A069420AF1489001917E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,10 +708,10 @@
 			target = 110A068F20AF1489001917E3 /* DocFinder */;
 			targetProxy = 11B76F8120AF1D9900A83E93 /* PBXContainerItemProxy */;
 		};
-		11B76F8920AF1D9900A83E93 /* PBXTargetDependency */ = {
+		11F48836214AE66A00DB1522 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 11B76F7420AF1D9900A83E93 /* ImageProcessor */;
-			targetProxy = 11B76F8820AF1D9900A83E93 /* PBXContainerItemProxy */;
+			targetProxy = 11F48835214AE66A00DB1522 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

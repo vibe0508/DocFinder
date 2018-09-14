@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="wPB-pV-v4z" kind="relationship" relationship="rootViewController" id="WHN-wM-l6M"/>
+                        <segue destination="TdO-8V-bkv" kind="relationship" relationship="rootViewController" id="4AX-ab-Gee"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvV-aW-wKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -83,13 +83,97 @@
                         <viewLayoutGuide key="safeArea" id="J99-as-DQd"/>
                     </view>
                     <navigationItem key="navigationItem" id="kjo-Fk-wX7"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="WOS-fM-JUd" id="yeZ-11-X7g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98w-dS-gTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646" y="97"/>
+            <point key="canvasLocation" x="78" y="97"/>
+        </scene>
+        <!--Parameters View Controller-->
+        <scene sceneID="19v-ti-EDh">
+            <objects>
+                <viewController id="TdO-8V-bkv" customClass="ParametersViewController" customModule="DocFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QRT-Le-7VU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать в AppName!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R9-uY-Bfa">
+                                <rect key="frame" x="34" y="84" width="307" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWW-af-COa">
+                                <rect key="frame" x="152" y="398" width="71" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Искать"/>
+                                <connections>
+                                    <segue destination="wPB-pV-v4z" kind="show" id="bKf-gU-p0D"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AjP-KL-QXt">
+                                <rect key="frame" x="16" y="301" width="343" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Я ищу фотографию" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-FN-dRm">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLf-Qb-U7G">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="паспорта"/>
+                                        <connections>
+                                            <action selector="onDocumentButtonTap" destination="TdO-8V-bkv" eventType="touchUpInside" id="v4Z-Bz-qDS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umu-Vr-cKt">
+                                <rect key="frame" x="16" y="118.5" width="343" height="57.5"/>
+                                <string key="text">AppName поможет вам найти фотографии документов в вашей фотоленте. AppName сканирует вашу фотобиблиотеку прямо на устройтве, никакие ваши данные не отправляются. Вы в полной безопасности.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1R9-uY-Bfa" firstAttribute="centerX" secondItem="QRT-Le-7VU" secondAttribute="centerX" id="364-FU-kEp"/>
+                            <constraint firstItem="WWW-af-COa" firstAttribute="centerX" secondItem="QRT-Le-7VU" secondAttribute="centerX" id="7DJ-dm-trm"/>
+                            <constraint firstItem="AjP-KL-QXt" firstAttribute="centerY" secondItem="QRT-Le-7VU" secondAttribute="centerY" id="SGn-cf-vvV"/>
+                            <constraint firstItem="WWW-af-COa" firstAttribute="top" secondItem="AjP-KL-QXt" secondAttribute="bottom" constant="32" id="Xy1-eU-UGX"/>
+                            <constraint firstItem="1R9-uY-Bfa" firstAttribute="top" secondItem="cFu-BP-tHS" secondAttribute="top" constant="64" id="bYu-ak-Q1Q"/>
+                            <constraint firstItem="AjP-KL-QXt" firstAttribute="leading" secondItem="cFu-BP-tHS" secondAttribute="leading" constant="16" id="buw-6a-ifY"/>
+                            <constraint firstItem="cFu-BP-tHS" firstAttribute="trailing" secondItem="AjP-KL-QXt" secondAttribute="trailing" constant="16" id="coO-xk-Kmr"/>
+                            <constraint firstItem="Umu-Vr-cKt" firstAttribute="top" secondItem="1R9-uY-Bfa" secondAttribute="bottom" constant="8" id="grB-Vu-Hko"/>
+                            <constraint firstItem="Umu-Vr-cKt" firstAttribute="leading" secondItem="cFu-BP-tHS" secondAttribute="leading" constant="16" id="hFe-cJ-fgz"/>
+                            <constraint firstItem="cFu-BP-tHS" firstAttribute="trailing" secondItem="Umu-Vr-cKt" secondAttribute="trailing" constant="16" id="nPk-C9-cB7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cFu-BP-tHS"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="afE-Fc-TQ1" appends="YES" id="how-Xx-0zg"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="u4a-fz-6MI"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="docTypeButton" destination="aLf-Qb-U7G" id="o0H-zJ-wq7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTr-hQ-mqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="afE-Fc-TQ1">
+                    <connections>
+                        <action selector="onViewTap" destination="TdO-8V-bkv" id="WgA-Nh-HqR"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-718" y="97"/>
         </scene>
     </scenes>
 </document>

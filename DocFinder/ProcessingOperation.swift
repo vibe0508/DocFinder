@@ -8,14 +8,14 @@
 
 import Foundation
 import Photos
-import CoreML
 import Vision
 
 class ProcessingOperation: Operation {
 
+    let docType: DocumentType
     let asset: PHAsset
     let imageManager: PHImageManager
-    let model: MLModel
+    let model: VNCoreMLModel
     private let successHandler: (PHAsset) -> ()
 
     private var _isFinished = false {
@@ -56,7 +56,8 @@ class ProcessingOperation: Operation {
         }
     }
 
-    init(asset: PHAsset, model: MLModel, imageManager: PHImageManager, successHandler: @escaping (PHAsset) -> ()) {
+    init(docType: DocumentType, asset: PHAsset, model: VNCoreMLModel, imageManager: PHImageManager, successHandler: @escaping (PHAsset) -> ()) {
+        self.docType = docType
         self.asset = asset
         self.model = model
         self.successHandler = successHandler
@@ -76,7 +77,9 @@ class ProcessingOperation: Operation {
                              contentMode: .aspectFill,
                              options: options) { [weak self] (image, _) in
                                 if let image = image.flatMap({ CIImage(image: $0) }) {
-                                    self?.processImage(image)
+                                    DispatchQueue.global(qos: .background).async {
+                                        self?.processImage(image)
+                                    }
                                 } else {
                                     self?.finish()
                                 }
@@ -96,8 +99,6 @@ class ProcessingOperation: Operation {
     }
 
     private func prepareRequest() throws -> VNCoreMLRequest {
-        let model = try VNCoreMLModel(for: ImageClassifier().model)
-
         let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
             self?.processClassifications(for: request, error: error)
         })
@@ -109,7 +110,11 @@ class ProcessingOperation: Operation {
         guard let results = request.results as? [VNClassificationObservation] else {
             return
         }
-        if results.contains(where: { $0.identifier == "passport_rf_home" && $0.confidence > 0.8 }) {
+        if results
+            .contains(where: {
+                $0.identifier == docType.classIdentifier
+                    && $0.confidence > docType.acceptableConfidence
+            }) {
             successHandler(asset)
         }
         finish()

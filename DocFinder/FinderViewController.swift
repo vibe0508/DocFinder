@@ -19,6 +19,8 @@ private func calculateItemSize() -> CGSize {
 class FinderViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
 
+    var docType: DocumentType!
+
     private var session: FinderSession?
     private let previewCache = PreviewCache(targetSize: calculateItemSize())
 
@@ -31,7 +33,7 @@ class FinderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        session = FinderSession(assetHandler: { [weak self] (asset) in
+        session = FinderSession(docType: docType, assetHandler: { [weak self] (asset) in
             DispatchQueue.main.async {
                 self?.assets.append(asset)
             }
@@ -39,6 +41,11 @@ class FinderViewController: UIViewController {
             print("Done")
         })
         session?.start()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {

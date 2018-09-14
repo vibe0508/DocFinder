@@ -20,7 +20,7 @@ class PreviewCache {
 
     init(targetSize: CGSize) {
         self.targetSize = targetSize
-        subscriptionKey = NotificationCenter.default.addObserver(forName: .UIApplicationDidReceiveMemoryWarning,
+        subscriptionKey = NotificationCenter.default.addObserver(forName: UIApplication.didReceiveMemoryWarningNotification,
                                                                  object: nil,
                                                                  queue: .main) { [weak self] _ in
                                                                     self?.cache = [:]

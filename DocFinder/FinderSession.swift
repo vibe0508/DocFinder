@@ -9,8 +9,11 @@
 import Foundation
 import Photos
 import ImageProcessor
+import Vision
 
 class FinderSession {
+
+    let docType: DocumentType
 
     private let assetHandler: (PHAsset) -> ()
     private let completionHandler: () -> ()
@@ -18,13 +21,14 @@ class FinderSession {
     private let operationQueue = OperationQueue()
     private let assetsRetriever = AssetsRetriever()
 
-    private let model = ImageClassifier().model
+    private let model = try! VNCoreMLModel(for: ImageClassifier().model)
     private let imageManager = PHCachingImageManager()
 
-    init(assetHandler: @escaping (PHAsset) -> (), completionHandler: @escaping () -> ()) {
+    init(docType: DocumentType, assetHandler: @escaping (PHAsset) -> (), completionHandler: @escaping () -> ()) {
 
         self.assetHandler = assetHandler
         self.completionHandler = completionHandler
+        self.docType = docType
 
         operationQueue.maxConcurrentOperationCount = 5
         operationQueue.underlyingQueue = .global(qos: .background)
@@ -40,7 +44,8 @@ class FinderSession {
     private func process(_ assets: [PHAsset]) {
         let completionOperation = BlockOperation(block: completionHandler)
         assets.forEach {
-            let operation = ProcessingOperation(asset: $0,
+            let operation = ProcessingOperation(docType: docType,
+                                                asset: $0,
                                                 model: model,
                                                 imageManager: imageManager,
                                                 successHandler: assetHandler)

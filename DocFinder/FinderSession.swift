@@ -21,7 +21,8 @@ class FinderSession {
     private let operationQueue = OperationQueue()
     private let assetsRetriever = AssetsRetriever()
 
-    private let model = try! VNCoreMLModel(for: ImageClassifier().model)
+    private let classificationModel = try! VNCoreMLModel(for: DocsClassifier().model)
+    private let detectionModel = try! VNCoreMLModel(for: DocDetector().model)
     private let imageManager = PHCachingImageManager()
 
     init(docType: DocumentType, assetHandler: @escaping (PHAsset) -> (), completionHandler: @escaping () -> ()) {
@@ -46,7 +47,8 @@ class FinderSession {
         assets.forEach {
             let operation = ProcessingOperation(docType: docType,
                                                 asset: $0,
-                                                model: model,
+                                                detectionModel: detectionModel,
+                                                classificationModel: classificationModel,
                                                 imageManager: imageManager,
                                                 successHandler: assetHandler)
             completionOperation.addDependency(operation)

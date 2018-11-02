@@ -12,6 +12,7 @@ enum DocumentType: String, CaseIterable {
     case passportHome = "passport_rf_home"
     case driverLicense = "driver_license_rf"
     case passportForeign = "passport_rf_foreign"
+    case snils = "snils"
     case other = "other_doc"
 
     var classIdentifier: String {
@@ -28,10 +29,23 @@ enum DocumentType: String, CaseIterable {
             return "Водительское удостоверение"
         case .other:
             return "Иной документ"
+        case .snils:
+            return "СНИЛС"
         }
     }
 
     var acceptableConfidence: Float {
         return 0.97
+    }
+
+    var needsFace: Bool {
+        switch self {
+//        case .passportHome, .passportForeign, .driverLicense:
+//            return true
+//        case .snils, .other:
+//            return false
+        default:
+            return false
+        }
     }
 }

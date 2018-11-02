@@ -25,6 +25,8 @@
 		118ADF9920C7A6E900A540C9 /* FilteringStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ADF9820C7A6E900A540C9 /* FilteringStep.swift */; };
 		118ADF9B20C7AE0200A540C9 /* ProcessingOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ADF9A20C7AE0200A540C9 /* ProcessingOutput.swift */; };
 		118ADF9D20C7BA2200A540C9 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */; };
+		11936029218B91C500A8AC3F /* DocDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 11936027218B91C500A8AC3F /* DocDetector.mlmodel */; };
+		1193602B218B9EC100A8AC3F /* DocsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1193602A218B9EC100A8AC3F /* DocsClassifier.mlmodel */; };
 		11B76F7E20AF1D9900A83E93 /* ImageProcessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */; };
 		11B76F8520AF1D9900A83E93 /* ImageProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B76F8420AF1D9900A83E93 /* ImageProcessorTests.swift */; };
 		11B76F8720AF1D9900A83E93 /* ImageProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 11B76F7720AF1D9900A83E93 /* ImageProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -126,6 +128,8 @@
 		118ADF9820C7A6E900A540C9 /* FilteringStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringStep.swift; sourceTree = "<group>"; };
 		118ADF9A20C7AE0200A540C9 /* ProcessingOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingOutput.swift; sourceTree = "<group>"; };
 		118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
+		11936027218B91C500A8AC3F /* DocDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DocDetector.mlmodel; sourceTree = "<group>"; };
+		1193602A218B9EC100A8AC3F /* DocsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DocsClassifier.mlmodel; sourceTree = "<group>"; };
 		11B76F7520AF1D9900A83E93 /* ImageProcessor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageProcessor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B76F7720AF1D9900A83E93 /* ImageProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageProcessor.h; sourceTree = "<group>"; };
 		11B76F7820AF1D9900A83E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				11F48831214AE13C00DB1522 /* FinderSession.swift */,
 				11F4883E214AF82300DB1522 /* DocumentType.swift */,
 				118ADF9C20C7BA2200A540C9 /* ImageClassifier.mlmodel */,
+				11936027218B91C500A8AC3F /* DocDetector.mlmodel */,
+				1193602A218B9EC100A8AC3F /* DocsClassifier.mlmodel */,
 				110A069720AF1489001917E3 /* Main.storyboard */,
 				110A069A20AF148B001917E3 /* Assets.xcassets */,
 				110A069C20AF148B001917E3 /* LaunchScreen.storyboard */,
@@ -644,6 +650,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F4883F214AF82300DB1522 /* DocumentType.swift in Sources */,
+				1193602B218B9EC100A8AC3F /* DocsClassifier.mlmodel in Sources */,
+				11936029218B91C500A8AC3F /* DocDetector.mlmodel in Sources */,
 				11FEF7FC214B826B0074BC6E /* ParametersViewController.swift in Sources */,
 				118ADF9D20C7BA2200A540C9 /* ImageClassifier.mlmodel in Sources */,
 				11F48832214AE13C00DB1522 /* FinderSession.swift in Sources */,
